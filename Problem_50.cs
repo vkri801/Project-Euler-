@@ -6,7 +6,7 @@ using System.Reflection.Metadata;
 using System.ComponentModel;
 
 /*
-Problem 1
+Problem 50
 
 The prime 41, can be written as the sum of six consecutive primes:
 41 = 2 + 3 + 5 + 7 + 11 + 13
@@ -36,6 +36,8 @@ namespace Project_Euler_Problems
         }
         //Sieve of Eratosthenes 
         //https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+        //part of code that takes most time for execution
+        //room of improvement here
         private long[] Sieve(int upperLimit)
         {
             int sieveBound = (int)(upperLimit - 1) / 2;
@@ -67,6 +69,8 @@ namespace Project_Euler_Problems
             return numbers.ToArray();
         }
 
+        //Cumulative sum is generated following the sieve. 
+        //Two nested loops used to find largest prime sum with outer loop counting up and inner counting down.
         private void Processing(int limit)
         {
             int numPrimes = 0;
@@ -101,6 +105,7 @@ namespace Project_Euler_Problems
 
         }
 
+      
         public long GetResult()
         {
             return this.result;
